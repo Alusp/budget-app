@@ -1,12 +1,17 @@
-require_relative "boot"
-
-require "rails/all"
+# frozen_string_literal: true
 
 # Require the gems listed in Gemfile, including any gems
-# you've limited to :test, :development, or :production.
+require_relative 'boot'
+
+# Require the gems listed in Gemfile, including any gems
+require 'rails/all'
+
+# Require the gems listed in Gemfile, including any gems
 Bundler.require(*Rails.groups)
 
+# you've limited to :test, :development, or :production.
 module Budget
+  # you've limited to :test, :development, or :production.
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0

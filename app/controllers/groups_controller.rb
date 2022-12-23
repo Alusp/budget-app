@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# GroupsController
 class GroupsController < ApplicationController
   def index
     @groups = Group.where(user: current_user).includes(:group_purchases).order(created_at: :desc).limit(4)

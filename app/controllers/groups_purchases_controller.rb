@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# GroupsPurchasesController
 class GroupsPurchasesController < ApplicationController
   def new
     @purchase = Purchase.new

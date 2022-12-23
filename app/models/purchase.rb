@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Purchase < ApplicationRecord
   belongs_to :user, class_name: 'User'
   has_many :groups, through: :group_purchases

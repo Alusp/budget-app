@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# users as CreateGroupPurchases, do the following
 class CreateGroupPurchases < ActiveRecord::Migration[7.0]
   def change
     create_table :group_purchases do |t|

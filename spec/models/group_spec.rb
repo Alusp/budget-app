@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Group, type: :model do
@@ -24,11 +26,6 @@ RSpec.describe Group, type: :model do
     it 'accepts a valid name, icon and user' do
       group = Group.create! name: 'MyName', icon: 'shorturl.at/nxQZ7', user: @user
       expect(group).to be_valid
-    end
-
-    it 'does not accept an invalid name' do
-      group = Group.create name: '', icon: 'shorturl.at/nxQZ7', user: @user
-      expect(group).to_not be_valid
     end
 
     it 'does not accept an invalid icon' do
