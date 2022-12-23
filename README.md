@@ -84,9 +84,9 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
->Deployment project.
+>Demonstration project.
 
-- [Live Demo Link](https://budget-app-e823.onrender.com/)
+- [Live Demo Link](https://www.loom.com/share/46f73bd7b34749ddbe4ce84357a37661)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

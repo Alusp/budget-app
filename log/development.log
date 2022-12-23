@@ -5103,3 +5103,297 @@ Processing by GroupsController#index as TURBO_STREAM
 Completed 200 OK in 18ms (Views: 15.3ms | ActiveRecord: 1.3ms | Allocations: 7538)
 
 
+Started GET "/" for ::1 at 2022-12-23 15:29:05 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Processing by GroupsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "groups" WHERE "groups"."user_id" = $1 LIMIT $2[0m  [["user_id", 7], ["LIMIT", 1]]
+  ↳ app/views/groups/index.html.erb:12
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."user_id" = $1 ORDER BY "groups"."created_at" DESC LIMIT $2[0m  [["user_id", 7], ["LIMIT", 4]]
+  ↳ app/views/groups/index.html.erb:14
+  [1m[36mGroupPurchase Load (0.9ms)[0m  [1m[34mSELECT "group_purchases".* FROM "group_purchases" WHERE "group_purchases"."group_id" IN ($1, $2, $3)[0m  [["group_id", 5], ["group_id", 4], ["group_id", 3]]
+  ↳ app/views/groups/index.html.erb:14
+  [1m[36mPurchase Load (0.4ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/groups/index.html.erb:25
+  [1m[36mPurchase Load (0.3ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/groups/index.html.erb:25
+  Rendered groups/index.html.erb within layouts/application (Duration: 94.7ms | Allocations: 19676)
+  Rendered layout layouts/application.html.erb (Duration: 545.9ms | Allocations: 135269)
+Completed 200 OK in 576ms (Views: 536.2ms | ActiveRecord: 16.2ms | Allocations: 141888)
+
+
+Started GET "/users/sign_out" for ::1 at 2022-12-23 15:29:17 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Redirected to http://[::1]:3000/
+Completed 302 Found in 494ms (ActiveRecord: 0.4ms | Allocations: 4383)
+
+
+Started GET "/" for ::1 at 2022-12-23 15:29:17 +0200
+Processing by Devise::SessionsController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/splash.html.erb within layouts/application
+  Rendered devise/sessions/splash.html.erb within layouts/application (Duration: 10.1ms | Allocations: 1248)
+  Rendered layout layouts/application.html.erb (Duration: 32.5ms | Allocations: 4066)
+Completed 200 OK in 39ms (Views: 38.6ms | ActiveRecord: 0.0ms | Allocations: 4835)
+
+
+Started GET "/" for ::1 at 2022-12-23 15:29:22 +0200
+Processing by Devise::SessionsController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/splash.html.erb within layouts/application
+  Rendered devise/sessions/splash.html.erb within layouts/application (Duration: 1.5ms | Allocations: 878)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 3566)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 3913)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-12-23 15:29:39 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.2ms | Allocations: 241)
+  Rendered devise/shared/_links.html.erb (Duration: 2.1ms | Allocations: 584)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 17.2ms | Allocations: 4463)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 7510)
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 0.0ms | Allocations: 8925)
+
+
+Started POST "/users" for ::1 at 2022-12-23 15:30:04 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Jalloh", "email"=>"jallo@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jallo@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Jalloh"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jallo@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "surname", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "role") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["email", "jallo@gmail.com"], ["encrypted_password", "$2a$12$ZBZJKVzCFkP20Y3Z3T/Om.q0Dyprr/UQkDOicgLpIwgw/1xl3pDxC"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["created_at", "2022-12-23 13:30:04.620103"], ["updated_at", "2022-12-23 13:30:04.620103"], ["name", "Jalloh"], ["surname", nil], ["confirmation_token", nil], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["role", "default"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://[::1]:3000/
+Completed 302 Found in 301ms (ActiveRecord: 4.6ms | Allocations: 11159)
+
+
+Started GET "/" for ::1 at 2022-12-23 15:30:04 +0200
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Processing by GroupsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "groups" WHERE "groups"."user_id" = $1 LIMIT $2[0m  [["user_id", 8], ["LIMIT", 1]]
+  ↳ app/views/groups/index.html.erb:12
+  Rendered groups/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 720)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3645)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.3ms | Allocations: 4076)
+
+
+Started GET "/groups/new" for ::1 at 2022-12-23 15:30:26 +0200
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/_form.html.erb (Duration: 1.9ms | Allocations: 838)
+  Rendered groups/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1061)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 3872)
+Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 0.2ms | Allocations: 5623)
+
+
+Started POST "/groups" for ::1 at 2022-12-23 15:30:57 +0200
+Processing by GroupsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "group"=>{"name"=>"Tomato", "icon"=>"https://cdn2.iconfinder.com/data/icons/fruit-and-vegetable-64/340/vegetable_tomato_food_organic_healthy-512.png"}, "commit"=>"Save"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/groups_controller.rb:25:in `create'
+  [1m[36mGroup Create (0.8ms)[0m  [1m[32mINSERT INTO "groups" ("name", "icon", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Tomato"], ["icon", "https://cdn2.iconfinder.com/data/icons/fruit-and-vegetable-64/340/vegetable_tomato_food_organic_healthy-512.png"], ["user_id", 8], ["created_at", "2022-12-23 13:30:57.446776"], ["updated_at", "2022-12-23 13:30:57.446776"]]
+  ↳ app/controllers/groups_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/groups_controller.rb:25:in `create'
+Redirected to http://[::1]:3000/
+Completed 302 Found in 14ms (ActiveRecord: 2.9ms | Allocations: 4500)
+
+
+Started GET "/" for ::1 at 2022-12-23 15:30:57 +0200
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Processing by GroupsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "groups" WHERE "groups"."user_id" = $1 LIMIT $2[0m  [["user_id", 8], ["LIMIT", 1]]
+  ↳ app/views/groups/index.html.erb:12
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."user_id" = $1 ORDER BY "groups"."created_at" DESC LIMIT $2[0m  [["user_id", 8], ["LIMIT", 4]]
+  ↳ app/views/groups/index.html.erb:14
+  [1m[36mGroupPurchase Load (0.2ms)[0m  [1m[34mSELECT "group_purchases".* FROM "group_purchases" WHERE "group_purchases"."group_id" = $1[0m  [["group_id", 6]]
+  ↳ app/views/groups/index.html.erb:14
+  Rendered groups/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 2287)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 5101)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 1.0ms | Allocations: 5519)
+
+
+Started GET "/groups/new" for ::1 at 2022-12-23 15:31:02 +0200
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/_form.html.erb (Duration: 1.6ms | Allocations: 498)
+  Rendered groups/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 558)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 3370)
+Completed 200 OK in 13ms (Views: 8.4ms | ActiveRecord: 0.3ms | Allocations: 5019)
+
+
+Started POST "/groups" for ::1 at 2022-12-23 15:31:40 +0200
+Processing by GroupsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "group"=>{"name"=>"Sausage", "icon"=>"https://cdn4.iconfinder.com/data/icons/fast-food-130/64/05-Hotdog-512.png"}, "commit"=>"Save"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/groups_controller.rb:25:in `create'
+  [1m[36mGroup Create (0.9ms)[0m  [1m[32mINSERT INTO "groups" ("name", "icon", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Sausage"], ["icon", "https://cdn4.iconfinder.com/data/icons/fast-food-130/64/05-Hotdog-512.png"], ["user_id", 8], ["created_at", "2022-12-23 13:31:40.925027"], ["updated_at", "2022-12-23 13:31:40.925027"]]
+  ↳ app/controllers/groups_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/groups_controller.rb:25:in `create'
+Redirected to http://[::1]:3000/
+Completed 302 Found in 53ms (ActiveRecord: 3.2ms | Allocations: 4036)
+
+
+Started GET "/" for ::1 at 2022-12-23 15:31:40 +0200
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Processing by GroupsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "groups" WHERE "groups"."user_id" = $1 LIMIT $2[0m  [["user_id", 8], ["LIMIT", 1]]
+  ↳ app/views/groups/index.html.erb:12
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."user_id" = $1 ORDER BY "groups"."created_at" DESC LIMIT $2[0m  [["user_id", 8], ["LIMIT", 4]]
+  ↳ app/views/groups/index.html.erb:14
+  [1m[36mGroupPurchase Load (0.4ms)[0m  [1m[34mSELECT "group_purchases".* FROM "group_purchases" WHERE "group_purchases"."group_id" IN ($1, $2)[0m  [["group_id", 7], ["group_id", 6]]
+  ↳ app/views/groups/index.html.erb:14
+  Rendered groups/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 2386)
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | Allocations: 5192)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 1.0ms | Allocations: 5566)
+
+
+Started GET "/groups/7" for ::1 at 2022-12-23 15:31:49 +0200
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:12:in `show'
+  [1m[36mGroupPurchase Load (0.2ms)[0m  [1m[34mSELECT "group_purchases".* FROM "group_purchases" WHERE "group_purchases"."group_id" = $1 ORDER BY "group_purchases"."created_at" DESC[0m  [["group_id", 7]]
+  ↳ app/controllers/groups_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupPurchase Load (0.9ms)[0m  [1m[34mSELECT "group_purchases".* FROM "group_purchases" WHERE "group_purchases"."group_id" = $1[0m  [["group_id", 7]]
+  ↳ app/views/groups/show.html.erb:18
+  Rendered groups/show.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2055)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 4874)
+Completed 200 OK in 28ms (Views: 11.5ms | ActiveRecord: 1.4ms | Allocations: 8323)
+
+
+Started GET "/groups_purchases/new" for ::1 at 2022-12-23 15:32:01 +0200
+Processing by GroupsPurchasesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering groups_purchases/new.html.erb within layouts/application
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/groups_purchases/new.html.erb:16:in `map'
+  Rendered groups_purchases/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1960)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 4976)
+Completed 200 OK in 25ms (Views: 17.8ms | ActiveRecord: 0.6ms | Allocations: 7413)
+
+
+Started POST "/groups_purchases" for ::1 at 2022-12-23 15:32:19 +0200
+Processing by GroupsPurchasesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "purchase"=>{"name"=>"Sausage", "amount"=>"34"}, "group"=>"7", "commit"=>"Save"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/groups_purchases_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/groups_purchases_controller.rb:10:in `create'
+  [1m[36mPurchase Create (0.7ms)[0m  [1m[32mINSERT INTO "purchases" ("name", "amount", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Sausage"], ["amount", 34.0], ["user_id", 8], ["created_at", "2022-12-23 13:32:19.550505"], ["updated_at", "2022-12-23 13:32:19.550505"]]
+  ↳ app/controllers/groups_purchases_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/groups_purchases_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/groups_purchases_controller.rb:11:in `create'
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/groups_purchases_controller.rb:11:in `create'
+  [1m[36mPurchase Load (0.6ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/groups_purchases_controller.rb:11:in `create'
+  [1m[36mGroupPurchase Create (1.0ms)[0m  [1m[32mINSERT INTO "group_purchases" ("group_id", "purchase_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["group_id", 7], ["purchase_id", 5], ["created_at", "2022-12-23 13:32:19.576464"], ["updated_at", "2022-12-23 13:32:19.576464"]]
+  ↳ app/controllers/groups_purchases_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/groups_purchases_controller.rb:11:in `create'
+Redirected to http://[::1]:3000/groups/7
+Completed 302 Found in 45ms (ActiveRecord: 6.6ms | Allocations: 10987)
+
+
+Started GET "/groups/7" for ::1 at 2022-12-23 15:32:19 +0200
+Processing by GroupsController#show as TURBO_STREAM
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:12:in `show'
+  [1m[36mGroupPurchase Load (0.4ms)[0m  [1m[34mSELECT "group_purchases".* FROM "group_purchases" WHERE "group_purchases"."group_id" = $1 ORDER BY "group_purchases"."created_at" DESC[0m  [["group_id", 7]]
+  ↳ app/controllers/groups_controller.rb:15:in `show'
+  [1m[36mPurchase Load (0.6ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/groups_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupPurchase Load (0.5ms)[0m  [1m[34mSELECT "group_purchases".* FROM "group_purchases" WHERE "group_purchases"."group_id" = $1[0m  [["group_id", 7]]
+  ↳ app/views/groups/show.html.erb:18
+  [1m[36mPurchase Load (0.4ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/groups/show.html.erb:18
+  Rendered groups/show.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1523)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 4332)
+Completed 200 OK in 34ms (Views: 15.0ms | ActiveRecord: 2.5ms | Allocations: 8067)
+
+
+Started GET "/" for ::1 at 2022-12-23 15:32:33 +0200
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Processing by GroupsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "groups" WHERE "groups"."user_id" = $1 LIMIT $2[0m  [["user_id", 8], ["LIMIT", 1]]
+  ↳ app/views/groups/index.html.erb:12
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."user_id" = $1 ORDER BY "groups"."created_at" DESC LIMIT $2[0m  [["user_id", 8], ["LIMIT", 4]]
+  ↳ app/views/groups/index.html.erb:14
+  [1m[36mGroupPurchase Load (0.4ms)[0m  [1m[34mSELECT "group_purchases".* FROM "group_purchases" WHERE "group_purchases"."group_id" IN ($1, $2)[0m  [["group_id", 7], ["group_id", 6]]
+  ↳ app/views/groups/index.html.erb:14
+  [1m[36mPurchase Load (0.3ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/groups/index.html.erb:25
+  Rendered groups/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 3091)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 5893)
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 1.5ms | Allocations: 6269)
+
+
+Started GET "/older_groups" for ::1 at 2022-12-23 15:32:38 +0200
+Processing by GroupsController#older_index as HTML
+  [1m[36mUser Load (15.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering groups/older_index.html.erb within layouts/application
+  [1m[36mGroup Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "groups" WHERE "groups"."user_id" = $1 LIMIT $2[0m  [["user_id", 8], ["LIMIT", 1]]
+  ↳ app/views/groups/older_index.html.erb:12
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."user_id" = $1 ORDER BY "groups"."created_at" ASC[0m  [["user_id", 8]]
+  ↳ app/views/groups/older_index.html.erb:14
+  [1m[36mGroupPurchase Load (0.4ms)[0m  [1m[34mSELECT "group_purchases".* FROM "group_purchases" WHERE "group_purchases"."group_id" IN ($1, $2)[0m  [["group_id", 6], ["group_id", 7]]
+  ↳ app/views/groups/older_index.html.erb:14
+  [1m[36mPurchase Load (0.4ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/groups/older_index.html.erb:25
+  Rendered groups/older_index.html.erb within layouts/application (Duration: 18.1ms | Allocations: 3553)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 6355)
+Completed 200 OK in 48ms (Views: 24.1ms | ActiveRecord: 17.2ms | Allocations: 8147)
+
+
+Started GET "/" for ::1 at 2022-12-23 15:32:42 +0200
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Processing by GroupsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "groups" WHERE "groups"."user_id" = $1 LIMIT $2[0m  [["user_id", 8], ["LIMIT", 1]]
+  ↳ app/views/groups/index.html.erb:12
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."user_id" = $1 ORDER BY "groups"."created_at" DESC LIMIT $2[0m  [["user_id", 8], ["LIMIT", 4]]
+  ↳ app/views/groups/index.html.erb:14
+  [1m[36mGroupPurchase Load (1.1ms)[0m  [1m[34mSELECT "group_purchases".* FROM "group_purchases" WHERE "group_purchases"."group_id" IN ($1, $2)[0m  [["group_id", 7], ["group_id", 6]]
+  ↳ app/views/groups/index.html.erb:14
+  [1m[36mPurchase Load (0.3ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/groups/index.html.erb:25
+  Rendered groups/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 3078)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 5885)
+Completed 200 OK in 20ms (Views: 17.3ms | ActiveRecord: 2.0ms | Allocations: 6255)
+
+

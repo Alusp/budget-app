@@ -5,8 +5,8 @@
   <a href="#" class="text-light"><i class="bi bi-search h1"></i></a>
 </div>
 <ul class="top menu d-flex justify-content-center text-light gap-2 list-unstyled pb-2 text-decoration-none">
-  <li><%= link_to "Recently Added", root_path , :class => 'nav-link' %><li>
-  <li><%= link_to "Previously Added",  older_groups_path, :class => 'nav-link' %><li>
+  <li><%= link_to "Most recent", root_path , :class => 'nav-link' %><li>
+  <li><%= link_to "Most ancient",  older_groups_path, :class => 'nav-link' %><li>
 </ul>
 
 <% if !@groups.empty? %>
