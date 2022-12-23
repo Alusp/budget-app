@@ -1,5 +1,4 @@
 # rubocop:disable Metrics/BlockLength
-# frozen_string_literal: true
 
 require 'active_support/core_ext/integer/time'
 

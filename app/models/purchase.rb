@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# Purchase
 
 class Purchase < ApplicationRecord
   belongs_to :user, class_name: 'User'
