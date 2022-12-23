@@ -1,0 +1,42 @@
+<div class="d-flex menu justify-content-between top p-2">
+  <%= link_to root_path, class: 'text-light h1' do %>
+    <i class="bi bi-arrow-left-circle-fill"></i>
+  <% end %>
+  <h2 class='text-light h1'>DETAILS</h2>
+  <p></p>
+</div>
+ 
+<div>
+  <div class=" main category d-flex border mb-1 p-5">
+    <div class="logo me-2 col-2" style="background-image: url(<%= @group.icon %>); background-repeat: no-repeat; background-size: cover"></div>
+    <div class="col-5">
+       <strong> <%= @group.name %> </strong>
+      <p><%= @group.created_at.strftime("%d %h %Y") %> </p>
+  </div>
+  <p></p>
+  <% @total = 0 %>
+  <% @group.group_purchases.each { |e| @total += e.purchase.amount }%>
+  <p class="text-end col-3">Total: $<%= @total %></p>
+</div>
+<% if @group_purchases.size > 0%>
+  <div id="groups" class="p-2">
+    <% @group_purchases.each do |gr| %>
+      <div class="main d-flex justify-content-between align-items border bg-light mt-2 mb-2 p-1">
+        <div class="d-flex flex-column">
+          <p>
+            <%= gr.purchase.name %>
+          </p>
+          <small class='text-secondary'>
+            <%= gr.created_at.strftime("%d %h %Y")%> at <%=gr.created_at.strftime("%l.%M%P")%>
+          </small>
+        </div>
+        <p class='font-weight-bold font-italic'>$<%= gr.purchase.amount %></p>
+      </div>
+    <% end %>
+  <% else %>
+    <p class="p-2">No purchases added yet for this category</p>
+  <% end %>
+  <div class="text-light footer d-flex justify-content-center p-3">
+    <%= link_to "Add new purchases", new_groups_purchase_path, class: 'btn btn-outline-dark' %>
+  </div>
+</div>
