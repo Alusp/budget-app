@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# AddConfirmableToDevise
 class AddConfirmableToDevise < ActiveRecord::Migration[7.0]
   def up
     add_column :users, :confirmation_token, :string

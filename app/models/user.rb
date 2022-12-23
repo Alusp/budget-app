@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# ApplicationRecord
 class User < ApplicationRecord
   has_many :groups, dependent: :destroy, foreign_key: 'author_id'
   has_many :purchases, dependent: :destroy, foreign_key: 'author_id'
