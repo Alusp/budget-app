@@ -8,7 +8,6 @@ require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 Bundler.require(*Rails.groups)
-
 # you've limited to :test, :development, or :production.
 module Budget
   # you've limited to :test, :development, or :production.
