@@ -35,7 +35,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="BUDGET APP"></a>
+# 📖 [BUDGET APP] <a name="BUDGET APP"></a>
 
 > An expense Tracker is the easiest and most user friendly Personal Finance App. And best of all, it allows you to create user, group, transaction and total amount of money spent by each user and by each group. it's free! The simple fact is, by tracking all your expenses.
 
@@ -82,11 +82,11 @@
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 Presentation <a name="live-demo"></a>
 
->Demonstration project.
+>Demonstration of project.
 
-- [Live Demo Link](https://www.loom.com/share/46f73bd7b34749ddbe4ce84357a37661)
+- [here](https://www.loom.com/share/46f73bd7b34749ddbe4ce84357a37661)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -162,7 +162,7 @@ To run tests, run the following command:
  
 >Deployment project.
 
-- [Live Demo Link](https://budget-app-e823.onrender.com/)
+- [Live Link](https://budget-app-e823.onrender.com/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
