@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
+# Require the gems listed in Gemfile, including any gems
 require_relative 'boot'
 
+# Require the gems listed in Gemfile, including any gems
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
-# you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 # you've limited to :test, :development, or :production.
 module Budget
