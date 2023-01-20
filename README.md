@@ -35,7 +35,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [BUDGET APP] <a name="BUDGET APP"></a>
+# 📖 BUDGET APP <a name="BUDGET APP"></a>
 
 > An expense Tracker is the easiest and most user friendly Personal Finance App. And best of all, it allows you to create user, group, transaction and total amount of money spent by each user and by each group. it's free! The simple fact is, by tracking all your expenses.
 
