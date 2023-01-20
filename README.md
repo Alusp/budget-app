@@ -162,7 +162,7 @@ To run tests, run the following command:
  
 >Deployment project.
 
-- [Live Link](https://budget-app-e823.onrender.com/)
+- [Soon](https://budget-app-e823.onrender.com/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -214,8 +214,6 @@ If you like this project...
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+This project is [MIT](./MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
